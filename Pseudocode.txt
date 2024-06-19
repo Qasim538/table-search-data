@@ -1,0 +1,43 @@
+// On page load
+on DOMContentLoaded:
+    fetch data from 'data.json'
+    parse the data
+    call loadTableData(data)
+
+// Load data into table
+function loadTableData(data):
+    get table body element
+    for each item in data:
+        insert new row in table body
+        insert cells with data (Serial Number, First Name, Last Name, Age, Email, Phone Number)
+
+// Search functionality
+function searchTable():
+    get search input value
+    convert input value to uppercase
+    get all table rows
+    for each row (starting from second row):
+        hide the row by default
+        get all cells in the row
+        for each cell (starting from second cell):
+            if cell contains search input value:
+                show the row
+                break inner loop
+
+// Add new row
+function addRow():
+    get input values (First Name, Last Name, Age, Email, Phone Number)
+    if any input is empty:
+        show alert
+        return
+    get table body element
+    insert new row in table body
+    insert cells with input data (Serial Number, First Name, Last Name, Age, Email, Phone Number)
+    clear input fields
+    call updateSerialNumbers()
+
+// Update serial numbers
+function updateSerialNumbers():
+    get table body element
+    for each row in table body:
+        update first cell with row index + 1

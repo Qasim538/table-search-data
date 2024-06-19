@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded",  () => {
   // Fetch data from data.json file
 
-  try {
-    const res = await fetch("data.json");
-    const data = await res.json();
-    loadTableData(data)
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
+  fetch("data.json").then((response) => response.json()).then((data) => {
+          loadTableData(data);
+
+    console.log(data);
+
+  })
+
 });
 
 // Function to load dat into the table
